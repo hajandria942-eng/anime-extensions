@@ -69,15 +69,17 @@ class FrenchAnime :
     override fun episodeListParse(response: Response): List<SEpisode> {
         val document = response.asJsoup()
         val episodeList = mutableListOf<SEpisode>()
-
+        
         val epsData = document.selectFirst("div.eps")?.text() ?: return emptyList()
-        epsData.split(" ").filter { it.isNotBlank() }.forEach {
-            val data = it.split("!", limit = 2)
-            val episode = SEpisode.create()
-            episode.episode_number = data[0].toFloatOrNull() ?: 0F
-            episode.name = "Episode ${data[0]}"
-            episode.url = data[1]
-            episodeList.add(episode)
+        epsData.split(" ").filter { it.isNotBlank() }.forEach { token ->
+            val data = token.split("!", limit = 2)
+            if (data.size == 2) {
+                val episode = SEpisode.create()
+                episode.episode_number = data[0].toFloatOrNull() ?: 0F
+                episode.name = "Episode ${data[0]}"
+                episode.url = data[1]  
+                episodeList.add(episode)
+            }
         }
 
         return episodeList.reversed()
