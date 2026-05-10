@@ -13,7 +13,7 @@ class AniWatchtv :
     ZoroTheme(
         "en",
         "AniWatchtv",
-        "https://aniwatchtv.to",
+        "https://aniwatchtv.co.at",
         hosterNames = listOf(
             "VidSrc",
             "MegaCloud",
