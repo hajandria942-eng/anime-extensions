@@ -2,7 +2,7 @@ ext {
     extName = 'AniWatchtv'
     extClass = '.AniWatchtv'
     themePkg = 'zorotheme'
-    baseUrl = 'https://aniwatchtv.to'
+    baseUrl = 'https://aniwatchtv.co.at'
     overrideVersionCode = 10
 }
 
