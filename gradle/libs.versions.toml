@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.3.0"
+kotlin = "2.1.0"
 coroutines = "1.10.2"
 
 # 1.8 and beyond switched to `all-compatibility` mode
